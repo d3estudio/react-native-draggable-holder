@@ -26,3 +26,9 @@ return (
 ```
 
 For extra and more detailed usage, see: <https://github.com/tongyy/react-native-draggable-holder>
+
+The props I left out is;
+
+`pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, offsetX, offsetY, reverse`
+
+Others won't work.
