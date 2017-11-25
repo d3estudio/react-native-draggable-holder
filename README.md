@@ -32,3 +32,17 @@ The props I left out is;
 `pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, offsetX, offsetY, reverse`
 
 Others won't work.
+
+Additional props;
+
+- **activeOpacity (number):** Sometimes you don't want your draggable to have touchableopacity or want to change the activeOpacity value of it. Change it between 0 and 1. (Default is the default of touchableOpacity which is 0.2)
+
+~~~JS
+return(
+  <Draggable activeOpacity={0.2}>
+    <View style={{width: 100, height: 100, backgroundColor: "red"}}>
+      <Text>Drag me</Text>
+    </View>
+  </Draggable>
+);
+~~~

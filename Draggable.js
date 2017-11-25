@@ -1,6 +1,6 @@
 /**
- *  * https://github.com/tongyy/react-native-draggable
- *
+ *  * Fork: https://github.com/tongyy/react-native-draggable
+ * 	* Repo: https://github.com/btk/react-native-draggable-holder
  */
 
 import React, { Component } from 'react';
@@ -22,6 +22,7 @@ export default class Draggable extends Component {
 		offsetX:PropTypes.number,
 		offsetY:PropTypes.number,
 		reverse:PropTypes.bool,
+		activeOpacity:PropTypes.number,
 		pressDrag:PropTypes.func,
 		pressDragRelease:PropTypes.func,
 		longPressDrag:PropTypes.func,
@@ -37,7 +38,7 @@ export default class Draggable extends Component {
 	}
 	constructor(props) {
 		super(props);
-		const { pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, offsetX, offsetY, reverse} = props;
+		const { activeOpacity, pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, offsetX, offsetY, reverse} = props;
 		this.pressDrag = pressDrag;
 		this.pressInDrag = pressInDrag;
 		this.pressOutDrag = pressOutDrag;
@@ -45,6 +46,7 @@ export default class Draggable extends Component {
 		this.offsetX = offsetX!=null ? offsetX : 100;
 		this.offsetY = offsetY!=null ? offsetY : 100;
 		this.reverse = reverse!=null ? reverse : true;
+		this.activeOpacity = activeOpacity!=null ? activeOpacity : 0.2;
 		this.state = {
 			pan:new Animated.ValueXY(),
 			_value:{x: 0, y: 0}
@@ -94,6 +96,7 @@ export default class Draggable extends Component {
 					{...this.panResponder.panHandlers}
 					style={this.state.pan.getLayout()}>
 					<TouchableOpacity
+						activeOpacity={this.activeOpacity}
 						onPress={this.pressDrag}
 						onLongPress={this.longPressDrag}
 						onPressIn={this.pressInDrag}
