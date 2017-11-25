@@ -2,7 +2,7 @@
 
 Draggable item holder for react-native!
 
-This is a form of react-native-draggable-holder that only ads the functionality of supplying children components for the draggable component, allowing you to make any component or component tree draggable, I really don't know why it has been implemented like this way originally, but here it is;
+This is a fork of [react-native-draggable-holder](https://github.com/tongyy/react-native-draggable) that only ads the functionality of supplying children components for the draggable component, allowing you to make any component or component tree draggable, I really don't know why it has been implemented like this way originally, but here it is;
 
 ```
 npm install react-native-draggable-holder --save
@@ -33,7 +33,7 @@ The props I left out is;
 
 Others won't work.
 
-Additional props;
+## Additional Props
 
 - **activeOpacity (number):** Sometimes you don't want your draggable to have touchableopacity or want to change the activeOpacity value of it. Change it between 0 and 1. (Default is the default of touchableOpacity which is 0.2)
 

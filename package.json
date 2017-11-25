@@ -1,7 +1,7 @@
 {
-  "name": "react-native-draggable",
-  "version": "1.0.8",
-  "description": "draggable",
+  "name": "react-native-draggable-holder",
+  "version": "1.0.0",
+  "description": "draggable holder for react native",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tongyy/react-native-draggable.git"
+    "url": "git+https://github.com/btk/react-native-draggable-holder.git"
   },
   "dependencies": {
     "prop-types": "^15.6.0"
@@ -32,12 +32,13 @@
     "react-native",
     "draggable",
     "drag",
-    "drop"
+    "drop",
+    "draggable-holder"
   ],
-  "author": "tongyy",
+  "author": "btk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tongyy/react-native-draggable/issues"
+    "url": "https://github.com/btk/react-native-draggable-holder/issues"
   },
-  "homepage": "https://github.com/tongyy/react-native-draggable#readme"
+  "homepage": "https://github.com/btk/react-native-draggable-holder#readme"
 }
