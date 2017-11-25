@@ -25,7 +25,7 @@ return (
 );
 ```
 
-For extra and more detailed usage, see: <https://github.com/tongyy/react-native-draggable-holder>
+For extra and more detailed usage, see: <https://github.com/tongyy/react-native-draggable>
 
 The props I left out is;
 
