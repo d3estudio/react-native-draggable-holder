@@ -19,8 +19,8 @@ import PropTypes from 'prop-types';
 
 export default class Draggable extends Component {
 	static propTypes = {
-		offsetX:PropTypes.number,
-		offsetY:PropTypes.number,
+		posX:PropTypes.number,
+		posY:PropTypes.number,
 		reverse:PropTypes.bool,
 		activeOpacity:PropTypes.number,
 		pressDrag:PropTypes.func,
@@ -38,13 +38,13 @@ export default class Draggable extends Component {
 	}
 	constructor(props) {
 		super(props);
-		const { activeOpacity, pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, offsetX, offsetY, reverse} = props;
+		const { activeOpacity, pressDrag, pressDragRelease, longPressDrag, pressInDrag, pressOutDrag, posX, posY, reverse} = props;
 		this.pressDrag = pressDrag;
 		this.pressInDrag = pressInDrag;
 		this.pressOutDrag = pressOutDrag;
 		this.longPressDrag = longPressDrag;
-		this.offsetX = offsetX!=null ? offsetX : 100;
-		this.offsetY = offsetY!=null ? offsetY : 100;
+		this.posX = posX!=null ? posX : 100;
+		this.posY = posY!=null ? posY : 100;
 		this.reverse = reverse!=null ? reverse : true;
 		this.activeOpacity = activeOpacity!=null ? activeOpacity : 0.2;
 		this.state = {
@@ -79,19 +79,18 @@ export default class Draggable extends Component {
 			}
 		});
 	}
-	_positionCss = (size,x,y) => {
-		let Window = Dimensions.get('window');
+	_positionCss = (x,y) => {
 		return {
 			zIndex:999,
 			position: 'absolute',
-			top: Window.height/2 - size+y,
-			left: Window.width/2 - size+x,
+			top: y,
+			left: x,
 		};
 	}
 
 	render() {
 		return (
-			<View style={this._positionCss(this.renderSize,this.offsetX,this.offsetY)}>
+			<View style={this._positionCss(this.posX,this.posY)}>
 				<Animated.View
 					{...this.panResponder.panHandlers}
 					style={this.state.pan.getLayout()}>
